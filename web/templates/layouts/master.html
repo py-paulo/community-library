@@ -1,0 +1,701 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<script>window._wca = window._wca || [];</script>
+
+<title> {% block title %} {% endblock %} </title>
+<meta name="description" content="" />
+<meta name="robots" content="noindex, follow" />
+<meta property="og:locale" content="pr-BR" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta name="twitter:card" content="summary" />
+
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//pxgcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='customify-font-stylesheet-0-css' 
+	href='//pxgcdn.com/fonts/butler/stylesheet.css' type='text/css' media='all' />
+<link rel='stylesheet' id='customify-font-stylesheet-1-css' 
+	href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' 
+	href='http://localhost:5000/css/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wc-block-style-css'  href='http://localhost:5000/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='http://localhost:5000/css/woocommerce-layout.css' type='text/css' media='all' />
+<style id='woocommerce-layout-inline-css' type='text/css'>
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='http://localhost:5000/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='http://localhost:5000/css/woocommerce.css' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='gema-style-css'  href='http://localhost:5000/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gema-fonts-butler-css'  href='http://localhost:5000/css/stylesheet.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gema-google-fonts-css'  href='//fonts.googleapis.com/css?family=Montserrat%3A100%2C100i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C+600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i&#038;subset=latin%2Clatin-ext&#038;ver=5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://localhost:5000/css/genericons.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://localhost:5000/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='zoom-instagram-widget-css'  href='http://localhost:5000/css/instagram-widget.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='http://localhost:5000/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://localhost:5000/js/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/spin.min.js' id='spin-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/jquery.spin.min.js' id='jquery.spin-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/tiled-gallery.min.js' id='tiled-gallery-js'></script>
+<script async defer type='text/javascript' src='https://demos.pixelgrade.com/wp-content/plugins/jetpack/https://stats.wp.com/s-202102.js' id='woocommerce-analytics-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/jquery.lazy.min.js' id='zoom-instagram-widget-lazy-load-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/instagram-widget.js' id='zoom-instagram-widget-js'></script>
+<link rel="https://api.w.org/" href="https://demos.pixelgrade.com/gema/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demos.pixelgrade.com/gema/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://demos.pixelgrade.com/gema/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.6" />
+<meta name="generator" content="WooCommerce 3.7.1" />
+<link rel='shortlink' href='https://wp.me/7UNkG' />
+<!-- Custom Logo: hide header text -->
+<style id="custom-logo-css" type="text/css">
+	.site-title, .site-description-text {
+		position: absolute;
+		clip: rect(1px, 1px, 1px, 1px);
+	}
+</style>
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//s1.wp.com'/>
+<link rel='dns-prefetch' href='//s2.wp.com'/>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'/>
+<link rel='dns-prefetch' href='//0.gravatar.com'/>
+<link rel='dns-prefetch' href='//1.gravatar.com'/>
+<link rel='dns-prefetch' href='//2.gravatar.com'/>
+<link rel='dns-prefetch' href='//widgets.wp.com'/>
+<style type='text/css'>
+img#wpstats{display:none}
+</style>
+<noscript>
+	<style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+</noscript>
+<style id="customify_output_style">
+:root { --sm-color-primary: #e03a3a; }
+:root { --sm-color-secondary: #f75034; }
+:root { --sm-color-tertiary: #ad2d2d; }
+:root { --sm-dark-primary: #000000; }
+:root { --sm-dark-secondary: #000000; }
+:root { --sm-dark-tertiary: #a3a3a1; }
+:root { --sm-light-primary: #ffffff; }
+:root { --sm-light-secondary: #f7f5f5; }
+:root { --sm-light-tertiary: #f7f2f2; }
+.u-blog-sides-spacing { padding-left: 36px; }
+.u-blog-sides-spacing { padding-right: 36px; }
+.card h2 { color: #000000; }
+.card__meta-primary { color: #a3a3a1; }
+.card__meta-secondary { color: #a3a3a1; }
+#sb_instagram #sbi_images .sbi_photo,
+ .content-quote:before,
+ .singular .entry-header,
+ .attachment .entry-header,
+ .widget,
+ .card--text .card__wrap,
+ .card--text .card__wrap:before,
+ .card__image,
+ .card__title,
+ .sticky.card--text .card__wrap:before,
+ .jetpack_subscription_widget.widget:before,
+ .widget_blog_subscription.widget:before,
+ .card--text .card__meta,
+ input[type="text"],
+ input[type="password"],
+ input[type="datetime"],
+ input[type="datetime-local"],
+ input[type="date"],
+ input[type="month"],
+ input[type="time"],
+ input[type="week"],
+ input[type="number"],
+ input[type="email"],
+ input[type="url"],
+ input[type="search"],
+ input[type="tel"],
+ input[type="color"],
+ select,
+ textarea { background-color: #ffffff; }
+.sticky .card__title{
+			box-shadow: 0 0 0 8px #ffffff, 0 0 0 9px #000000;
+}
+.site-logo img, .custom-logo-link img { max-height: 190px; }
+.site-title { font-size: 190px; }
+.main-navigation li a, .main-navigation li:after { color: #000000; }
+.main-navigation .nav-menu > li[class*="current-menu"] > a,
+ .main-navigation .nav-menu > li[class*="current-menu"]:after,
+ .jetpack-social-navigation li[class*="current-menu"] > a { color: #000000; }
+.main-navigation.main-navigation .nav-menu > li > a:after { border-bottom-color: #000000; }
+.u-container-width { max-width: 1650px; }
+.singular .content-area,
+ .attachment .content-area { max-width: 1060px; }
+body { margin: 0px; }
+html { background-color: #f7f5f5; }
+.entry-header .entry-title { color: #000000; }
+body { color: #000000; }
+input[type="submit"], .btn, .search-submit, div#infinite-handle span button, div#infinite-handle span button:hover, .more-link,
+ .sticky.card--text .card__wrap:after,
+ .sticky.card--text .card__meta,
+ body div.sharedaddy div.sd-social-icon div.sd-content ul li[class*="share-"] a.sd-button:hover { background-color: #000000; }
+input[type="text"],
+ input[type="password"],
+ input[type="datetime"],
+ input[type="datetime-local"],
+ input[type="date"],
+ input[type="month"],
+ input[type="time"],
+ input[type="week"],
+ input[type="number"],
+ input[type="email"],
+ input[type="url"],
+ input[type="search"],
+ input[type="tel"],
+ input[type="color"],
+ select,
+ textarea {border-color: rgba(0,0,0, 0.25);
+		}body div.sharedaddy div.sd-social-icon div.sd-content ul li[class*="share-"] a.sd-button:hover { border-color: #000000; }
+.singular .site-header, .attachment .site-header {border-bottom-color: rgba(0,0,0, 0.25);
+		}.entry-content a,
+ .comment__content a { color: #a3a3a1; }
+.entry-content a:hover,
+ .entry-content a:focus,
+ .comment__content a:hover,
+ .comment__content a:focus { color: #a3a3a1; }
+h1 { color: #000000; }
+h2 { color: #000000; }
+h3 { color: #000000; }
+h4 { color: #000000; }
+h5 { color: #000000; }
+h6 { color: #000000; }
+.comment__avatar,
+ .sticky,
+ body.singular .nav-menu > li > a:before,
+ .bypostauthor > .comment__article .comment__avatar,
+ .overlay-shadow { background-color: #ffffff; }
+body,
+ .mobile-header-wrapper,
+ .main-navigation { background: #ffffff; }
+input[type="submit"],
+ .btn,
+ div#infinite-handle span button,
+ div#infinite-handle span button:hover,
+ .more-link,
+ .comment__content a,
+ .nav-menu ul li.hover > a,
+ .nav-menu ul li.hover:after,
+ div#subscribe-text p,
+ .jetpack_subscription_widget .widget__title,
+ .widget_blog_subscription .widget__title,
+ .jetpack_subscription_widget p,
+ .jetpack_subscription_widget input[type="submit"],
+ .widget_blog_subscription input[type="submit"],
+ .sticky.card--text .card__wrap,
+ .sticky.card--text .card__meta,
+ .sticky.card--text .cat-links, .sticky.card--text .byline .author, .sticky.card--text .post-edit-link { color: #ffffff; }
+.jetpack_subscription_widget input[type='submit'],
+ .sticky.card--text .btn,
+ .sticky.card--text .search-submit,
+ .sticky.card--text div#infinite-handle span button,
+ div#infinite-handle span .sticky.card--text button,
+ .sticky.card--text .more-link { border-color: #ffffff; }
+.nav-menu:before { border-right-color: #ffffff; }
+.nav-menu:before { border-left-color: #ffffff; }
+body div.sharedaddy div.sd-social-icon div.sd-content ul li[class*="share-"] a.sd-button:hover {
+color: #ffffff !important;}
+.is--webkit .dropcap {
+background-image: linear-gradient(45deg, currentColor 0%, currentColor 10%, #ffffff 10%, #ffffff 40%, currentColor 40%, currentColor 60%, #ffffff 60%, #ffffff 90%, currentColor 90%, currentColor 100%)}
+.site-footer { padding-top: 40px; }
+.site-footer { padding-bottom: 40px; }
+.site-footer { color: #000000; }
+.site-footer a { color: #a3a3a1; }
+.site-footer { background: #ffffff; }
+
+@media only screen and (min-width: 1650px) {
+
+	.u-blog-grid-width[class] { max-width: 1980px; }
+
+}
+
+@media only screen and (min-width: 900px) {
+
+	.nav-menu ul { border-color: #000000; }
+
+	.nav-menu ul { background: #ffffff; }
+
+}
+
+@media not screen and (min-width: 900px) {
+
+	.widget-area { background: #ffffff; }
+
+}
+			</style>
+			<style id="customify_fonts_output">
+
+.card h2 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 500;
+font-size: 20;
+letter-spacing: 0.03;
+line-height: 1.3;
+text-transform: uppercase;
+}
+
+
+.card__meta-primary, .card__meta-primary a {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;
+font-size: 10;
+letter-spacing: 0.03;
+line-height: 1.6;
+text-transform: uppercase;
+}
+
+
+.card__meta-secondary, .card__meta-secondary a {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;
+font-size: 10;
+letter-spacing: 0.03;
+line-height: 1.6;
+text-transform: uppercase;
+}
+
+
+.site-title {
+font-family: Butler, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+text-transform: none;
+}
+
+
+.main-navigation {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+text-transform: uppercase;
+}
+
+
+.page .entry-title {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 400;
+font-size: 32;
+letter-spacing: 0.03;
+line-height: 1.3;
+text-transform: uppercase;
+}
+
+
+body {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;
+font-size: 16;
+letter-spacing: 0;
+line-height: 1.8;
+text-transform: none;
+}
+
+
+.entry-content blockquote p {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 700;
+font-size: 17;
+letter-spacing: 0;
+line-height: 1.8;
+text-transform: uppercase;
+}
+
+
+.entry-content h1, h1, .h1 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 400;
+font-size: 32;
+letter-spacing: 0.03;
+line-height: 1.3;
+text-transform: uppercase;
+}
+
+
+.entry-content h2, h2, .h2 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 400;
+font-size: 20;
+letter-spacing: 0.03;
+line-height: 1.3;
+text-transform: uppercase;
+}
+
+
+.entry-content h3, h3, .h3 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 400;
+font-size: 18;
+letter-spacing: 0.03;
+line-height: 1.5;
+text-transform: uppercase;
+}
+
+
+.entry-content h4, h4, .h4 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 14;
+letter-spacing: 0.03;
+line-height: 1.5;
+text-transform: none;
+}
+
+
+.entry-content h5, h5, .h5, .entry-content blockquote cite {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 12;
+letter-spacing: 0.03;
+line-height: 1.5;
+text-transform: none;
+}
+
+
+.entry-content h6, h6, .h6 {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 12;
+letter-spacing: 0.03;
+line-height: 1.5;
+text-transform: none;
+}
+
+
+.site-footer {
+font-family: Montserrat, "SF Pro Text", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+text-transform: none;
+}
+
+</style>
+<style type="text/css" id="wp-custom-css">
+/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+</style>
+
+    <!-- BEGIN PAGE LEVEL PLUGINS STYLES -->
+    {% block css_plugins %}
+    <!-- TODO // -->
+    {% endblock %}
+
+    <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+    {% block css %}
+    <!-- TODO // -->
+    {% endblock %}
+
+    <!-- BEGIN PAGE LEVEL PLUGINS SCRIPTS -->
+	{% block js_plugins %}
+	<!-- TODO // -->
+	{% endblock %}
+	<!-- BEGIN PAGE LEVEL PLUGINS SCRIPTS -->
+
+</head>
+
+<body class="home blog wp-custom-logo theme-gema woocommerce-no-js group-blog hfeed">
+
+	<div class="mobile-header-wrapper">
+		<div class="mobile-logo"></div>
+		<button class="overlay-toggle  menu-toggle  menu-open" aria-controls="primary-menu" aria-expanded="false">
+			<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="noun_70916" transform="translate(0.000000, 5.000000)" fill="currentColor"><path d="M0.909090909,2.22222222 L29.0909091,2.22222222 C29.5927273,2.22222222 30,1.72444444 30,1.11111111 C30,0.497777778 29.5927273,0 29.0909091,0 L0.909090909,0 C0.407272727,0 0,0.497777778 0,1.11111111 C0,1.72444444 0.407272727,2.22222222 0.909090909,2.22222222 L0.909090909,2.22222222 Z" ></path> <path d="M0.909090909,11.1111111 L29.0909091,11.1111111 C29.5927273,11.1111111 30,10.6133333 30,10 C30,9.38666667 29.5927273,8.88888889 29.0909091,8.88888889 L0.909090909,8.88888889 C0.407272727,8.88888889 0,9.38666667 0,10 C0,10.6133333 0.407272727,11.1111111 0.909090909,11.1111111 L0.909090909,11.1111111 Z" ></path><path d="M0.909090909,20 L29.0909091,20 C29.5927273,20 30,19.5022222 30,18.8888889 C30,18.2755556 29.5927273,17.7777778 29.0909091,17.7777778 L0.909090909,17.7777778 C0.407272727,17.7777778 0,18.2755556 0,18.8888889 C0,19.5022222 0.407272727,20 0.909090909,20 L0.909090909,20 Z" ></path></g></g></svg>
+			<span class="screen-reader-text">Primary Menu</span>
+		</button>
+		<div class="search-toggle js-search"> <span class="screen-reader-text">Open Search</span></div>
+    </div>
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<div id="content" class="site-content">
+
+		<div id="primary" class="content-area">
+			<main id="main" role="main">
+				<div class="u-blog-sides-spacing o-grid--4col-@large o-grid--3col-@desk o-grid--2col-@lap">
+					<div class="o-wrapper u-blog-grid-width">
+						<div class="grid">
+							<div class="header grid__item">
+								<header id="masthead" class="site-header" role="banner">
+									<div class="site-branding">
+										<a href="/" class="custom-logo-link" rel="home" aria-current="page">
+											<img
+                                                    width="1277"
+                                                    height="407"
+                                                    src="https://i.pinimg.com/originals/a8/9c/7b/a89c7ba1d2d2029a331c19862b5782af.png"
+                                                    class="custom-logo"
+                                                    alt="Library"/>
+										</a>
+										<h1 class="site-title">
+											<a href="https://demos.pixelgrade.com/gema/" rel="home">
+												<span>Library</span>
+											</a>
+										</h1>
+										<p class="site-description-text">Your content is the superstar</p>
+									</div><!-- .site-branding -->
+
+									<nav id="site-navigation" class="main-navigation" role="navigation">
+										<button class="overlay-toggle  menu-toggle  menu-close" aria-expanded="false">
+											<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="close-icon" fill="currentColor"><g><g><path d="M16.3256354,15 L29.7254275,1.60020781 C30.0915242,1.2341112 30.0915242,0.640669068 29.7254275,0.274572458 C29.3597997,-0.0915241525 28.76542,-0.0915241525 28.3997922,0.274572458 L15,13.6743646 L1.60020781,0.274572458 C1.23457996,-0.0915241525 0.640200314,-0.0915241525 0.274572458,0.274572458 C-0.0915241525,0.640669068 -0.0915241525,1.2341112 0.274572458,1.60020781 L13.6743646,15 L0.274572458,28.3997922 C-0.0915241525,28.7658888 -0.0915241525,29.3593309 0.274572458,29.7254275 C0.457386386,29.9087102 0.697388261,30.0001172 0.937390136,30.0001172 C1.17739201,30.0001172 1.41739389,29.9087102 1.60020781,29.7254275 L15,16.3256354 L28.3997922,29.7254275 C28.5826061,29.9087102 28.822608,30.0001172 29.0626099,30.0001172 C29.3026117,30.0001172 29.5426136,29.9087102 29.7254275,29.7254275 C30.0915242,29.3593309 30.0915242,28.7658888 29.7254275,28.3997922 L16.3256354,15 L16.3256354,15 Z" ></path></g></g></g></g></svg>
+											<span class="screen-reader-text">Close Primary Menu</span>
+										</button>
+
+										<ul id="primary-menu" class="nav-menu">
+											<li id="menu-item-804" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-804">
+												<a href="https://demos.pixelgrade.com/gema/" aria-current="page">Início</a>
+											</li>
+											<li id="menu-item-806" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-806">
+												<a href="javscript:void(0);">Categorias</a>
+											</li>
+											<li id="menu-item-805" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-805">
+												<a href="javscript:void(0);">Meus Livros</a>
+											</li>
+											<li id="menu-item-807" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-807">
+												<a href="javscript:void(0);">Sobre</a>
+											</li>
+										</ul>
+										<nav class="jetpack-social-navigation jetpack-social-navigation-genericons" role="navigation" aria-label="Social Links Menu">
+											<div class="menu-social-menu-container">
+												<ul id="menu-social-menu" class="menu">
+													<li id="menu-item-917" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-917">
+														<a href="https://www.facebook.com/pixelgrademedia">
+															<span class="screen-reader-text">Facebook</span>
+														</a>
+													</li>
+													<li id="menu-item-918" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-918">
+														<a href="https://twitter.com/pixelgrade">
+															<span class="screen-reader-text">Twitter</span>
+														</a>
+													</li>
+													<li id="menu-item-919" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-919">
+														<a href="https://www.instagram.com/pixelgrade/">
+															<span class="screen-reader-text">Instagram</span>
+														</a>
+													</li>
+													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item--search js-search">
+														<a href="#search">Search</a>
+													</li>
+												</ul>
+											</div>
+										</nav><!-- .jetpack-social-navigation -->
+
+									</nav><!-- #site-navigation -->
+
+								</header><!-- #masthead -->
+							</div><!-- .header -->
+
+                            {% block content %}
+                            <!-- TODO // -->
+		                    {% endblock %}
+							<!-- TODO CONTENT -->
+                    	</div>
+                	</div>
+            	</div>
+			</main><!-- #main -->
+
+
+			<nav class="navigation archive-navigation" role="navigation" aria-label="Posts navigation">
+				<h2 class="screen-reader-text">Posts navigation</h2>
+				<div class="nav-links">
+					<span aria-current="page" class="page-numbers current"><span class="screen-reader-text">Page </span>1</span>
+					<a class="page-numbers" href="https://demos.pixelgrade.com/gema/page/2/">
+						<span class="screen-reader-text">Page </span>2
+					</a>
+					<a class="page-numbers" href="https://demos.pixelgrade.com/gema/page/3/">
+						<span class="screen-reader-text">Page </span>3
+					</a>
+					<span class="page-numbers dots">&hellip;</span>
+					<a class="page-numbers" href="https://demos.pixelgrade.com/gema/page/5/">
+						<span class="screen-reader-text">Page </span>5
+					</a>
+					<a class="next page-numbers" href="https://demos.pixelgrade.com/gema/page/2/">Next</a>
+				</div>
+			</nav>
+		</div><!-- #primary -->
+	</div><!-- #content -->
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<span class="site-info-additional-text">
+				© 2018 Gema. <span class="c-footer__credits">Made with love by <a>Pixelgrade</a>.</span>
+			</span>
+		</div><!-- .site-info -->
+		<ul id="footer-menu" class="footer-menu"><li id="menu-item-906" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-906"><a href="https://demos.pixelgrade.com/gema/" aria-current="page">Home</a></li>
+			<li id="menu-item-907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-907">
+				<a href="https://demos.pixelgrade.com/gema/category/lifestyle/">Lifestyle</a></li>
+			<li id="menu-item-915" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-915">
+				<a href="https://demos.pixelgrade.com/gema/category/gallery/">Gallery</a></li>
+			<li id="menu-item-916" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-916">
+				<a href="https://demos.pixelgrade.com/gema/category/travel/">Travel</a></li>
+		</ul>
+	</footer><!-- #colophon -->
+
+    <div class="overlay--search">
+        <div class="overlay__wrapper">
+            <form role="search" method="get" class="search-form" action="https://demos.pixelgrade.com/gema/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>
+			<p>Begin typing your search above and press return to search. Press Esc to cancel.</p>
+        </div>
+        <b class="overlay__close"></b>
+    </div>
+<div class="overlay-shadow"></div>
+</div><!-- #page -->
+
+<div id="infinite-footer">
+	<div class="container">
+		<div class="blog-info">
+			<a id="infinity-blog-title" href="/" rel="home">
+                Library-Comuna
+            </a>
+		</div>
+		<div class="blog-credits">
+			<a href="javascript:void(0);" rel="noopener noreferrer" target="_blank" rel="generator">
+                Proudly powered by Paulo Roberto
+            </a>
+        </div>
+	</div>
+</div><!-- #infinite-footer -->
+<script>
+	let customifyTriggerFontsLoadedEvents = function() {
+		// Trigger the 'wf-active' event, just like Web Font Loader would do.
+		window.dispatchEvent(new Event('wf-active'));
+		// Add the 'wf-active' class on the html element, just like Web Font Loader would do.
+		document.getElementsByTagName('html')[0].classList.add('wf-active');
+	}
+
+	// Try to use the modern FontFaceSet browser APIs.
+	if ( typeof document.fonts !== 'undefined' && typeof document.fonts.ready !== 'undefined' ) {
+		document.fonts.ready.then(customifyTriggerFontsLoadedEvents);
+	} else {
+		// Fallback to just waiting a little bit and then triggering the events for older browsers.
+		window.addEventListener('load', function() {
+			setTimeout( customifyTriggerFontsLoadedEvents, 300 );
+		});
+	}
+</script>
+<script type="text/javascript">
+	var c = document.body.className;
+	c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+	document.body.className = c;
+</script>
+<script type='text/javascript' src='http://localhost:5000/js/infinity.min.js' id='the-neverending-homepage-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/jquery.blockUI.min.js' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/gema\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/gema\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demos.pixelgrade.com\/gema\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:5000/js/add-to-cart.min.js' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/js.cookie.min.js' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/gema\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/gema\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:5000/js/woocommerce.min.js' id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/gema\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/gema\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_97d2307876b6ca3542c0ff63609ffa42","fragment_name":"wc_fragments_97d2307876b6ca3542c0ff63609ffa42","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:5000/js/cart-fragments.min.js' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-after'>
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event( 'jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				} );
+			} catch ( e ) {
+				jetpackLazyImagesLoadEvent = document.createEvent( 'Event' )
+				jetpackLazyImagesLoadEvent.initEvent( 'jetpack-lazy-images-load', true, true );
+			}
+			jQuery( 'body' ).get( 0 ).dispatchEvent( jetpackLazyImagesLoadEvent );
+		} );
+
+</script>
+<script type='text/javascript' id='jetpack-carousel-js-extra'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/demos.pixelgrade.com\/gema\/wp-admin\/admin-ajax.php","nonce":"fe01a00ecc","display_exif":"1","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/demos.pixelgrade.com\/gema\/wp-login.php?redirect_to=https%3A%2F%2Fdemos.pixelgrade.com%2Fgema%2Ftravel%2Fas-the-songs-go-by-2%2F","blog_id":"2","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:5000/js/jetpack-carousel.min.js' id='jetpack-carousel-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/bricklayer.js' id='bricklayer-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/modernizr-custom.js' id='gema-modernizr-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/skip-link-focus-fix.js' id='gema-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/imagesloaded.min.js' id='imagesloaded-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/main.js' id='gema-scripts-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script type='text/javascript' src='http://localhost:5000/js/responsive-videos.min.js' id='jetpack-responsive-videos-min-script-js'></script>
+<script type="text/javascript">
+			(function() {
+				var extend = function(out) {
+					out = out || {};
+
+					for (var i = 1; i < arguments.length; i++) {
+						if (!arguments[i])
+						continue;
+
+						for (var key in arguments[i]) {
+						if (arguments[i].hasOwnProperty(key))
+							out[key] = arguments[i][key];
+						}
+					}
+
+					return out;
+				};
+				extend( window.infiniteScroll.settings.scripts, ["jquery-core","jquery-migrate","jquery","spin","jquery.spin","tiled-gallery","woocommerce-analytics","zoom-instagram-widget-lazy-load","zoom-instagram-widget","the-neverending-homepage","jquery-blockui","wc-add-to-cart","js-cookie","woocommerce","wc-cart-fragments","jetpack-carousel","bricklayer","gema-modernizr","gema-skip-link-focus-fix","imagesloaded","gema-scripts","wp-embed","jetpack-responsive-videos-min-script"] );
+				extend( window.infiniteScroll.settings.styles, ["the-neverending-homepage","customify-font-stylesheet-0","customify-font-stylesheet-1","wp-block-library","wc-block-style","woocommerce-layout","woocommerce-smallscreen","woocommerce-general","woocommerce-inline","jetpack_likes","jetpack-carousel","tiled-gallery","gema-style","gema-fonts-butler","gema-google-fonts","genericons","jetpack-social-menu","dashicons","zoom-instagram-widget","jetpack-subscriptions","jetpack_css","jetpack-responsive-videos-style"] );
+			})();
+		</script><script type='text/javascript' src='http://localhost:5000/js/e-202102.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.6.1',blog:'116970358',post:'0',tz:'0',srv:'demos.pixelgrade.com'} ]);
+	_stq.push([ 'clickTrackerInit', '116970358', '0' ]);
+</script>
+
+</body>
+</html>
