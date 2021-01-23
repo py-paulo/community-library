@@ -1,5 +1,7 @@
 from datetime import datetime
+
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class PublishingCompany(models.Model):
@@ -7,8 +9,11 @@ class PublishingCompany(models.Model):
     name = models.CharField(
         max_length=100, verbose_name='Nome')
     website = models.CharField(
-        max_length=255, verbose_name='Link Website')
-    logo = models.ImageField(verbose_name='Logo')
+        max_length=255, verbose_name='Link Website', null=True, blank=True)
+    logo = models.ImageField(verbose_name='Logo', null=True, blank=True)
+
+    def __str__(self):
+        return self.name.capitalize()
 
 
 class Category(models.Model):
@@ -16,20 +21,24 @@ class Category(models.Model):
     name = models.CharField(
         max_length=100, verbose_name='Nome')
 
+    def __str__(self):
+        return self.name.capitalize()
+
 
 class Author(models.Model):
 
     name = models.CharField(
         max_length=255, verbose_name='Nome', blank=False, null=False, unique=True)
-    birthday = models.DateField(
-        verbose_name='Data de nascimento')
+
+    def __str__(self):
+        return self.name.title()
 
 
 class Book(models.Model):
 
     isbn = models.CharField(
         max_length=30, verbose_name='ISBN')
-    author = models.ManyToManyField(Author)
+    author = models.ManyToManyField(Author, through='BookAuthor', blank=True)
     title = models.CharField(
         max_length=255, verbose_name='Titulo', blank=False, null=False, unique=False)
     subtitle = models.CharField(
@@ -38,12 +47,17 @@ class Book(models.Model):
         max_length=50, verbose_name='Nome de exibição', blank=False, null=False)
     release_date = models.DateField(
         verbose_name='Data de lançamento', blank=True, null=True)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category, through='BookCategories', blank=True)
     description = models.TextField(
         verbose_name='Descrição', null=False, blank=False)
+    publish_company = models.ForeignKey(PublishingCompany, on_delete=models.CASCADE, null=True, blank=True)
+    display_cover = models.BooleanField(verbose_name='Exibir foto', default=False, null=True, blank=True)
     created_at = models.DateTimeField(default=datetime.now, verbose_name="Cadastrado em", blank=True, null=True)
 
     cover = models.ImageField(verbose_name='Capa', null=True, blank=True)
+
+    def __str__(self):
+        return self.title.title()
 
     @property
     def display_description(self):
@@ -68,3 +82,34 @@ class Book(models.Model):
             else:
                 authors += ', %s' % author.name
         return authors
+
+
+class BookAuthor(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '<Book %s> <Author %s>' % (self.book.title.capitalize(), self.author.name.capitalize())
+
+
+class BookCategories(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Book:%s, Category:%s' % (self.book.title.capitalize(), self.category.name.capitalize())
+
+
+class Review(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
+    text = models.TextField(null=False, blank=False)
+    approved = models.BooleanField(default=False, blank=False, null=False)
+    read = models.BooleanField(default=False, blank=False, null=False)
+    created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)

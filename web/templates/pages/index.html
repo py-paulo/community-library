@@ -14,374 +14,100 @@
 {% block content %}
 <!-- TODO CONTENT -->
 {% for book in books %}
-    <article
-	id="post-{{ book.id }}"
-	class="post-{{ book.id }} post type-post status-publish format-standard hentry category-travel grid__item card card--text card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-			<div class="card__shadow">
-				<div class="card__wrap">
-					<div class="card__meta entry-meta">
-						<span class="card__meta-primary">
-							<span class="cat-links">
-								<a href="javascript:void(0);" rel="category tag">
-									{{ book.display_categories }}
-								</a>
-							</span> by <span class="author vcard">
-								<a class="url fn n" href="javscript:void(0);">{{ book.display_authors }}</a>
-							</span>
-						</span>
-						<span class="card__meta-secondary">
-							<span class="posted-on">
-								<a href="javscript:void(0);" rel="bookmark">
-									<time class="entry-date published" datetime="{{ book.release_date }}">
-                                        {{ book.release_date }}
-                                    </time>
-								</a>
-							</span>
-						</span>
-					</div>
+    {% if book.display_cover %}
+        <article
+            id="post-{{ book.id }}"
+            class="post-{{ book.id }} post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item card card--image card--portrait">
+            <div class="card__mask">
+                <div class="card__hover">
+                    <div class="card__wrap">
+                        <div class="card__shadow">
+                            <a href="/post/{{ book.id }}" class="entry-image--portrait card__image">
+                                <div class="card__image-wrap" style="padding-top: 150%;">
+                                    <img
+                                            class="card__thumb"
+                                            src="{{ book.cover.url }}" alt="">
+                                    <div
+                                            class="card__image--large"
+                                            data-src="{{ book.cover.url }}"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-title-wrap">
+                            <div class="card__title">
+                                <h2>
+                                    <a href="/post/{{ book.id }}" rel="bookmark">
+                                        {{ book.title }}
+                                    </a>
+                                </h2>
+                                <div class="card__meta  entry-meta">
+                                    <span class="card__meta-primary">
+                                        <span class="cat-links">
+                                            <a href="javascript:void(0);" rel="category tag">{{ book.display_categories }}</a>
+                                        </span> by <span class="author vcard">
+                                            <a class="url fn n" href="javascript:void(0);">{{ book.display_categories }}</a>
+                                        </span>
+                                    </span>
+                                    <span class="card__meta-secondary">
+                                        <span class="posted-on">
+                                            <a href="https://demos.pixelgrade.com/gema/lifestyle/fridas-craftsy-coffee-shop-2/" rel="bookmark">
+                                                <time class="entry-date published" datetime="{{ book.release_date }}">
+                                                    {{ book.release_date }}
+                                                </time>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article><!-- #post-## -->
+    {% else %}
+        <article
+            id="post-{{ book.id }}"
+            class="post-{{ book.id }} post type-post status-publish format-standard hentry category-travel grid__item card card--text card--portrait">
+            <div class="card__mask">
+                <div class="card__hover">
+                    <div class="card__shadow">
+                        <div class="card__wrap">
+                            <div class="card__meta entry-meta">
+                                <span class="card__meta-primary">
+                                    <span class="cat-links">
+                                        <a href="javascript:void(0);" rel="category tag">
+                                            {{ book.display_categories }}
+                                        </a>
+                                    </span> by <span class="author vcard">
+                                        <a class="url fn n" href="javascript:void(0);">{{ book.display_authors }}</a>
+                                    </span>
+                                </span>
+                                <span class="card__meta-secondary">
+                                    <span class="posted-on">
+                                        <a href="javascript:void(0);" rel="bookmark">
+                                            <time class="entry-date published" datetime="{{ book.release_date }}">
+                                                {{ book.release_date }}
+                                            </time>
+                                        </a>
+                                    </span>
+                                </span>
+                            </div>
 
-					<h2>
-						<a href="/{{ book.id }}" rel="bookmark">
-                            {{ book.title }}
-						</a>
-					</h2>
-					<p>
-                        {{ book.display_description }}
-					</p>
-					<a class="btn" href="/{{ book.id }}">More</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</article><!-- #post-## -->
+                            <h2>
+                                <a href="/post/{{ book.id }}" rel="bookmark">
+                                    {{ book.title }}
+                                </a>
+                            </h2>
+                            <p>
+                                {{ book.display_description }}
+                            </p>
+                            <a class="btn" href="/post/{{ book.id }}">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article><!-- #post-## -->
+    {% endif %}
 {% endfor %}
-<article
-	id="post-676"
-	class="post-676 post type-post status-publish format-standard hentry category-travel grid__item card card--text card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-			<div class="card__shadow">
-				<div class="card__wrap">
-					<div class="card__meta entry-meta">
-						<span class="card__meta-primary">
-							<span class="cat-links">
-								<a href="javascript:void(0);" rel="category tag">
-									Travel
-								</a>
-							</span> by <span class="author vcard">
-								<a class="url fn n" href="javscript:void(0);">pixelgrade</a>
-							</span>
-						</span>
-						<span class="card__meta-secondary">
-							<span class="posted-on">
-								<a href="v" rel="bookmark">
-									<time class="entry-date published" datetime="2019-04-18T15:02:04+00:00">April 18, 2019</time>
-								</a>
-							</span>
-						</span>
-					</div>
-
-					<h2>
-						<a href="https://demos.pixelgrade.com/gema/travel/as-the-songs-go-by-2/" rel="bookmark">
-							Love your humble animals
-						</a>
-					</h2>
-					<p> I’m told it’s unusual to see four fawns together, all skinny stilts and big ears and spots and not yet savvy about
-						things like streets. Fawns and such have been a relief this week from the blaring dreariness of what humans have 
-						been up to.
-					</p>
-					<a class="btn" href="https://demos.pixelgrade.com/gema/travel/as-the-songs-go-by-2/">More</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</article><!-- #post-## -->
-
-<article
-	id="post-679"
-	class="post-679 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item card card--image card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-			<div class="card__wrap">
-				<div class="card__shadow">
-					<a href="https://demos.pixelgrade.com/gema/lifestyle/fridas-craftsy-coffee-shop-2/" class="entry-image--portrait card__image">
-						<div class="card__image-wrap" style="padding-top: 150%;">
-							<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC20-1-7x10.jpg" alt="">
-							<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC20-1-396x594.jpg"></div>
-						</div>
-					</a>
-				</div>
-				<div class="card-title-wrap">
-					<div class="card__title">
-						<h2>
-							<a href="https://demos.pixelgrade.com/gema/lifestyle/fridas-craftsy-coffee-shop-2/" rel="bookmark">
-								Frida&#8217;s coffee shop
-							</a>
-						</h2>
-						<div class="card__meta  entry-meta">
-							<span class="card__meta-primary">
-								<span class="cat-links">
-									<a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a>
-								</span> by <span class="author vcard">
-									<a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a>
-								</span>
-							</span>
-							<span class="card__meta-secondary">
-								<span class="posted-on">
-									<a href="https://demos.pixelgrade.com/gema/lifestyle/fridas-craftsy-coffee-shop-2/" rel="bookmark">
-										<time class="entry-date published" datetime="2019-04-17T16:22:45+00:00">April 17, 2019</time>
-										<time class="updated" datetime="2019-11-27T09:57:50+00:00">November 27, 2019</time>
-									</a>
-								</span>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-688" class="post-688 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-			<div class="card__wrap">
-				<div class="card__shadow">
-					<a href="https://demos.pixelgrade.com/gema/lifestyle/puppini-sisters-rocking-the-grand-hall-v1-2/" class="entry-image--portrait card__image">
-						<div class="card__image-wrap" style="padding-top: 149.98579948878%;">
-							<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC8-1-7x10.jpg" alt="">
-							<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC8-1-396x594.jpg"></div>
-						</div>
-					</a>
-				</div>
-				<div class="card-title-wrap">
-					<div class="card__title">
-						<h2>
-							<a href="https://demos.pixelgrade.com/gema/lifestyle/puppini-sisters-rocking-the-grand-hall-v1-2/" rel="bookmark">
-								Dean&#8217;s road runner
-							</a>
-						</h2>
-						<div class="card__meta  entry-meta">
-							<span class="card__meta-primary">
-								<span class="cat-links">
-									<a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a>
-								</span> by <span class="author vcard">
-									<a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a>
-								</span>
-							</span>
-							<span class="card__meta-secondary">
-								<span class="posted-on">
-									<a href="https://demos.pixelgrade.com/gema/lifestyle/puppini-sisters-rocking-the-grand-hall-v1-2/" rel="bookmark">
-										<time class="entry-date published" datetime="2019-04-15T16:16:46+00:00">April 15, 2019</time>
-										<time class="updated" datetime="2019-11-27T09:58:51+00:00">November 27, 2019</time>
-									</a>
-								</span>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-690" class="post-690 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--landscape">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/lifestyle/gargoyles-eyes-of-myths-and-legends-v1-2/" class="entry-image--landscape card__image">
-										<div class="card__image-wrap" style="padding-top: 66.3%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/1026-10x7.jpeg" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/1026-432x286.jpeg"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/lifestyle/gargoyles-eyes-of-myths-and-legends-v1-2/" rel="bookmark">There is no place like the fresh market</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/lifestyle/gargoyles-eyes-of-myths-and-legends-v1-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-13T16:16:46+00:00">April 13, 2019</time><time class="updated" datetime="2019-11-27T09:59:38+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-661" class="post-661 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/lifestyle/the-mediterranean-sun-sleeps-in-marrakech-2/" class="entry-image--portrait card__image">
-										<div class="card__image-wrap" style="padding-top: 150%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/138-7x10.jpeg" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/138-396x594.jpeg"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/lifestyle/the-mediterranean-sun-sleeps-in-marrakech-2/" rel="bookmark">Deep in the raw fields of Baltimore</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/lifestyle/the-mediterranean-sun-sleeps-in-marrakech-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-12T13:42:47+00:00">April 12, 2019</time><time class="updated" datetime="2019-11-27T09:59:59+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-678" class="post-678 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--landscape">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/lifestyle/gloriously-changing-my-luck-2/" class="entry-image--landscape card__image">
-										<div class="card__image-wrap" style="padding-top: 66.676152532726%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/Death_to_stock_photography_Vibrant-12-of-20-10x7.jpg" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/Death_to_stock_photography_Vibrant-12-of-20-432x288.jpg"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/lifestyle/gloriously-changing-my-luck-2/" rel="bookmark">Color-blocking: a day without black</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/lifestyle/gloriously-changing-my-luck-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-11T15:10:47+00:00">April 11, 2019</time><time class="updated" datetime="2019-11-27T10:00:25+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-668" class="post-668 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--landscape">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/lifestyle/what-does-it-take-for-a-craftsman-to-make-it-2/" class="entry-image--landscape card__image">
-										<div class="card__image-wrap" style="padding-top: 66.666666666667%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC5-10x7.jpg" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/DeathtoStock_NYC5-432x288.jpg"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/lifestyle/what-does-it-take-for-a-craftsman-to-make-it-2/" rel="bookmark">Is your city pet-friendly?</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/lifestyle/what-does-it-take-for-a-craftsman-to-make-it-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-10T14:00:48+00:00">April 10, 2019</time><time class="updated" datetime="2019-11-27T10:00:32+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-993" class="post-993 post type-post status-publish format-video hentry category-videos post_format-post-format-video grid__item  card card--image card--landscape">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-				<div class="card__wrap">
-					<div class="card__shadow">
-						<div class="card__image">
-							<div class="jetpack-video-wrapper"><div class="embed-vimeo" style="text-align: center;"><iframe src="https://player.vimeo.com/video/216511965" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>                        </div>
-					</div>
-					<div class="card-title-wrap">
-						<div class="card__title">
-							<h2><a href="https://demos.pixelgrade.com/gema/videos/mr-little-jeans-stitches/" rel="bookmark">Mr Little Jeans &#8211; Stitches</a></h2>                            <div class="card__meta  entry-meta">
-
-								<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/videos/" rel="category tag">Videos</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/videos/mr-little-jeans-stitches/" rel="bookmark"><time class="entry-date published" datetime="2019-04-09T14:44:23+00:00">April 9, 2019</time><time class="updated" datetime="2019-11-27T10:01:21+00:00">November 27, 2019</time></a></span></span>                                                            </div>
-						</div>
-					</div>
-				</div>
-
-
-		</div>
-	</div>
-</article><!-- #post-## -->
-<article id="post-695" class="post-695 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle grid__item  card card--image card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/lifestyle/open-late-closed-soon-v1-2/" class="entry-image--portrait card__image">
-										<div class="card__image-wrap" style="padding-top: 100.17145306472%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/27_sq-10x10.png" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/27_sq-396x397.png"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/lifestyle/open-late-closed-soon-v1-2/" rel="bookmark">&#8220;Wood Studio&#8221; Cafe Opening</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/lifestyle/" rel="category tag">Lifestyle</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/lifestyle/open-late-closed-soon-v1-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-08T16:16:46+00:00">April 8, 2019</time><time class="updated" datetime="2019-11-27T10:01:18+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
-
-<article id="post-697" class="post-697 post type-post status-publish format-standard has-post-thumbnail hentry category-travel grid__item  card card--image card--portrait">
-	<div class="card__mask">
-		<div class="card__hover">
-
-
-		<div class="card__wrap">
-			<div class="card__shadow">
-				<a href="https://demos.pixelgrade.com/gema/travel/new-york-old-york-v1-2/" class="entry-image--portrait card__image">
-										<div class="card__image-wrap" style="padding-top: 150.87890625%;">
-						<img class="card__thumb" src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/48-7x10.jpeg" alt="">
-						<div class="card__image--large" data-src="https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/2/2016/01/48-396x597.jpeg"></div>
-					</div>
-				</a>
-			</div>
-			<div class="card-title-wrap">
-				<div class="card__title">
-					<h2><a href="https://demos.pixelgrade.com/gema/travel/new-york-old-york-v1-2/" rel="bookmark">New York, Old York</a></h2>					<div class="card__meta  entry-meta">
-
-						<span class="card__meta-primary"><span class="cat-links"><a href="https://demos.pixelgrade.com/gema/category/travel/" rel="category tag">Travel</a></span> by <span class="author vcard"><a class="url fn n" href="https://demos.pixelgrade.com/gema/author/pixelgrade/">pixelgrade</a></span></span><span class="card__meta-secondary"><span class="posted-on"><a href="https://demos.pixelgrade.com/gema/travel/new-york-old-york-v1-2/" rel="bookmark"><time class="entry-date published" datetime="2019-04-06T16:16:46+00:00">April 6, 2019</time><time class="updated" datetime="2019-11-27T10:02:14+00:00">November 27, 2019</time></a></span></span>
-											</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-</article><!-- #post-## -->
 
 {% endblock %}
