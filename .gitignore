@@ -130,3 +130,7 @@ dmypy.json
 
 .vscode
 .idea
+
+/web/media/*.png
+/web/media/*.jpg
+/web/media/*.jpeg

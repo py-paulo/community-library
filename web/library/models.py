@@ -100,8 +100,15 @@ class BookCategories(models.Model):
         return 'Book:%s, Category:%s' % (self.book.title.capitalize(), self.category.name.capitalize())
 
 
+class Person(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+
+
 class Review(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    title = models.CharField(max_length=100, blank=True, null=False)
+    author = models.ForeignKey(Person, on_delete=models.CASCADE, null=False, blank=False)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
     text = models.TextField(null=False, blank=False)
     approved = models.BooleanField(default=False, blank=False, null=False)
@@ -109,7 +116,10 @@ class Review(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
 
-class Person(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
-    nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+class Comment(models.Model):
+    author = models.ForeignKey(Person, on_delete=models.CASCADE, null=False, blank=False)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
+    text = models.TextField(null=False, blank=False)
+    approved = models.BooleanField(default=False, blank=False, null=False)
+    read = models.BooleanField(default=False, blank=False, null=False)
+    created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)

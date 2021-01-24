@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  database:
+    image: mysql
+    container_name: libc-mysql
+    networks:
+      - us-east-1
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ${MYSQL_DATA}:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+  web:
+    build: .
+    container_name: web
+    networks:
+      - us-east-1
+    volumes:
+      - ./web:/var/www/libc
+    ports:
+      - "${WEB_PORT}:8000"
+      - "5000:80"
+    tty: true
+    command: ["/entry-point.sh", "libc-mysql", "${MYSQL_ROOT_PASSWORD}", "/usr/bin/python3", "manage.py", "runserver", "0.0.0.0:8000", "--insecure"]
+    depends_on:
+      - database
+
+networks:
+  us-east-1:
+    driver: bridge
+
+volumes:
+  data_mysql:
+  dbdata:
