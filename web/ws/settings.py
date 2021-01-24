@@ -127,3 +127,5 @@ STATIC_ROOT = '/var/www/html/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'

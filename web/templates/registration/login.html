@@ -142,14 +142,24 @@
     <div class="container" onclick="onclick">
     <div class="top"></div>
     <div class="bottom"></div>
+    <form method="POST" id="form-id" action="{% url 'login' %}">
+    {% csrf_token %}
     <div class="center">
         <h2>Please Sign In</h2>
-        <input type="email" placeholder="email" />
-        <input type="password" placeholder="password" />
+        {{ form.username }}
+        {{ form.password }}
         <br>
-        <div id="testbutton" style="color: black"></div>
+        <a href="javascript:void(0);" id="testbutton" style="color: black"></a>
         <h2>&nbsp;</h2>
     </div>
+    </form>
+    <script>
+        var form = document.getElementById("form-id");
+
+        document.getElementById("testbutton").addEventListener("click", function () {
+          form.submit();
+        });
+    </script>
 </div>
 </body>
 </html>
