@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>__LOGIN__</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+        *, *:before, *:after {
+         box-sizing: border-box;
+        }
+        body {
+            margin: 0px;
+         min-height: 100vh;
+         font-family: 'Raleway', sans-serif;
+        }
+        .container {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         overflow: hidden;
+        }
+        .container:hover .top:before, .container:active .top:before, .container:hover .bottom:before, .container:active .bottom:before, .container:hover .top:after, .container:active .top:after, .container:hover .bottom:after, .container:active .bottom:after {
+         margin-left: 200px;
+         transform-origin: -200px 50%;
+         transition-delay: 0s;
+        }
+        .container:hover .center, .container:active .center {
+         opacity: 1;
+         transition-delay: 0.2s;
+        }
+        .top:before, .bottom:before, .top:after, .bottom:after {
+         content: '';
+         display: block;
+         position: absolute;
+         width: 200vmax;
+         height: 200vmax;
+         top: 50%;
+         left: 50%;
+         margin-top: -100vmax;
+         transform-origin: 0 50%;
+         transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+         z-index: 10;
+         opacity: 0.65;
+         transition-delay: 0.2s;
+        }
+        .top:before {
+         transform: rotate(45deg);
+         background: #e46569;
+        }
+        .top:after {
+         transform: rotate(135deg);
+         background: #ecaf81;
+        }
+        .bottom:before {
+         transform: rotate(-45deg);
+         background: #60b8d4;
+        }
+        .bottom:after {
+         transform: rotate(-135deg);
+         background: #3745b5;
+        }
+        .center {
+         position: absolute;
+         width: 400px;
+         height: 400px;
+         top: 50%;
+         left: 50%;
+         margin-left: -200px;
+         margin-top: -200px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 30px;
+         opacity: 0;
+         transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+         transition-delay: 0s;
+         color: #333;
+        }
+        .center input {
+         width: 100%;
+         padding: 15px;
+         margin: 5px;
+         border-radius: 1px;
+         border: 1px solid #ccc;
+         font-family: inherit;
+        }
+
+
+        #testbutton {
+          width: 150px;
+          height:50px;
+          border-radius:180px;
+          position:relative;
+          background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+          cursor:pointer;
+          line-height:12px;
+        }
+
+        #testbutton:before {
+          content:'';
+          z-index:1;
+          position:absolute;
+          display:block;
+          width:80%;
+          height:70%;
+          top:15%;
+          left:10%;
+          transition: 0.3s opacity ease-in-out;
+          filter:blur(15px);
+          opacity:0;
+          background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+        }
+
+        #testbutton:hover:before {
+          opacity:1;
+          transition: 0.3s opacity ease-in-out;
+          filter:blur(25px);
+          background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+        }
+
+        #testbutton:after {
+          content:'Login';
+          text-align:center;
+          line-height:40px;
+          font-size:18px;
+          color:rgba(235,235,235,1);
+          font-weight:bold;
+          z-index:5;
+          position:absolute;
+          display:block;
+          border-radius:180px;
+          width:92%;
+          height:80%;
+          top:10%;
+          left:4%;
+          background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" onclick="onclick">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="center">
+        <h2>Please Sign In</h2>
+        <input type="email" placeholder="email" />
+        <input type="password" placeholder="password" />
+        <br>
+        <div id="testbutton" style="color: black"></div>
+        <h2>&nbsp;</h2>
+    </div>
+</div>
+</body>
+</html>

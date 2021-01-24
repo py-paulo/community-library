@@ -104,6 +104,11 @@ class Person(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    picture = models.ImageField(null=True, blank=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return "%s" % self.nickname
 
 
 class Review(models.Model):
@@ -115,11 +120,18 @@ class Review(models.Model):
     read = models.BooleanField(default=False, blank=False, null=False)
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
+    def __str__(self):
+        return self.title.title()
+
 
 class Comment(models.Model):
     author = models.ForeignKey(Person, on_delete=models.CASCADE, null=False, blank=False)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
-    text = models.TextField(null=False, blank=False)
+    iscomment = models.ForeignKey('Comment', on_delete=models.CASCADE, null=True, blank=True)
+    text = models.CharField(max_length=255, null=False, blank=False)
     approved = models.BooleanField(default=False, blank=False, null=False)
     read = models.BooleanField(default=False, blank=False, null=False)
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
+
+    def __str__(self):
+        return "%s, %s" % (self.book, self.text[:25])
