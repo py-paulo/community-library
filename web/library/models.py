@@ -34,6 +34,17 @@ class Author(models.Model):
         return self.name.title()
 
 
+class Person(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    picture = models.ImageField(null=True, blank=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return "%s" % self.nickname
+
+
 class Book(models.Model):
 
     isbn = models.CharField(
@@ -53,6 +64,7 @@ class Book(models.Model):
     publish_company = models.ForeignKey(PublishingCompany, on_delete=models.CASCADE, null=True, blank=True)
     display_cover = models.BooleanField(verbose_name='Exibir foto', default=False, null=True, blank=True)
     created_at = models.DateTimeField(default=datetime.now, verbose_name="Cadastrado em", blank=True, null=True)
+    owner = models.ForeignKey(Person, null=True, blank=False, on_delete=models.CASCADE)
 
     cover = models.ImageField(verbose_name='Capa', null=True, blank=True)
 
@@ -98,17 +110,6 @@ class BookCategories(models.Model):
 
     def __str__(self):
         return 'Book:%s, Category:%s' % (self.book.title.capitalize(), self.category.name.capitalize())
-
-
-class Person(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
-    nickname = models.CharField(max_length=50, null=False, blank=False, unique=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    picture = models.ImageField(null=True, blank=True)
-    description = models.CharField(max_length=255, blank=True, null=True)
-
-    def __str__(self):
-        return "%s" % self.nickname
 
 
 class Review(models.Model):
