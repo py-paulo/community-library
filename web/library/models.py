@@ -135,4 +135,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
     def __str__(self):
-        return "%s, %s" % (self.book, self.text[:25])
+        return "%d - [%s] %s" % (self.id, self.author.nickname, self.book)
