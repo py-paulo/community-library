@@ -72,6 +72,12 @@ class Book(models.Model):
         return self.title.title()
 
     @property
+    def display_title(self) -> str:
+        title = self.title.title()
+        title = title + ' ' + self.subtitle.capitalize() if self.subtitle else title
+        return title
+
+    @property
     def display_description(self):
         return self.description[:255]+'...'
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from library.models import Book, Category, Comment
+from library.models import Book, Category, Comment, Person
 from django.db.models import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 
@@ -12,6 +12,14 @@ def view_access(request):
 @login_required()
 def view_index(request):
     books = Book.objects.all()[::-1]
+
+    return render(
+        request, 'pages/index.html', {'books': books})
+
+
+@login_required()
+def view_my_books(request):
+    books = Book.objects.filter(owner=Person.objects.get(user=request.user))
 
     return render(
         request, 'pages/index.html', {'books': books})
@@ -38,6 +46,8 @@ def view_post(request, book_id=None):
         if iscommented:
             comments[comment.id].update({'iscomment': iscommented})
 
+    html = 'post-text.html' if not book.display_cover else 'img-post-text.html'
+
     return render(
-        request, 'pages/post-text.html', {
+        request, 'pages/%s' % html, {
             'book': book, 'books': books, 'categories': categories, 'comments': comments})

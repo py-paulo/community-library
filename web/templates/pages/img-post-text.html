@@ -1,4 +1,4 @@
-{% extends 'layouts/post-master.html' %}
+{% extends 'layouts/img-post-master.html' %}
 {% load static %}
 
 {% block title %} __POST__ {% endblock %}
@@ -13,11 +13,16 @@
 
 {% block content %}
 <div id="primary" class="content-area">
-    <main id="main" class="entry-image--landscape site-main" role="main">
+    <main id="main" class="entry-image--portrait site-main" role="main">
 
-        <div id="post-703" class="post-703 post type-post status-publish format-standard hentry category-lifestyle entry-image--landscape">
+        <div id="post-{{book.id}}" class="post-679 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle entry-image--portrait">
+
+            <div class="entry-featured  entry-thumbnail">
+                <img width="660" height="990" src="{{book.cover.url}}" class="attachment-gema-single-portrait size-gema-single-portrait wp-post-image" alt="" loading="lazy" />
+            </div>
+
             <div class="entry-header">
-                <h1 class="entry-title"><span>{{ book.title }}</span></h1>
+                <h1 class="entry-title"><span>{{ book.display_title }}</span></h1>
                 <div class="entry-meta">
                     <span class="cat-links">
                         <a href="/category/{{ book.display_categories }}/" rel="category tag">
@@ -31,7 +36,7 @@
                         </span>
                     </span>
                     <span class="posted-on">
-                        <a href="https://demos.pixelgrade.com/gema/lifestyle/summer-at-the-lake-v1-2/" rel="bookmark">
+                        <a href="/post/{{book.id}}" rel="bookmark">
                             <time class="entry-date published" datetime="{{ book.release_date }}">{{ book.release_date.year }}</time>
                         </a>
                     </span>
@@ -40,7 +45,7 @@
 
             <div class="post__content">
                 <div class="entry-content">
-                    <p>{{ book.description }}</p>
+                    <p class="intro">{{ book.description }}</p>
 
                 </div><!-- .entry-content -->
                 <footer class="entry-footer">
@@ -227,7 +232,7 @@
             <input type="hidden" name="source" value="javascript:void(0);"/>
             <input type="hidden" name="sub-type" value="widget"/>
             <input type="hidden" name="redirect_fragment" value="blog_subscription-2"/>
-            <button type="submit" name="jetpack_subscriptions_widget">Subscribe</button>
+            <button type="submit" name="jetpack_subscriptions_widget">GET BOOK</button>
         </p>
     </form>
 </aside>
