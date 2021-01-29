@@ -142,3 +142,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return "%d - [%s] %s" % (self.id, self.author.nickname, self.book)
+
+
+class Lending(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, null=False, blank=False)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
+    created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)

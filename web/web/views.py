@@ -3,6 +3,7 @@ from django.shortcuts import render
 from library.models import Book, Category, Comment, Person
 from django.db.models import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 
 def view_access(request):
@@ -11,7 +12,18 @@ def view_access(request):
 
 @login_required()
 def view_index(request):
-    books = Book.objects.all()[::-1]
+    book_list = Book.objects.all()[::-1]
+    paginator = Paginator(book_list, 3)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        books = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        books = paginator.page(paginator.num_pages)
 
     return render(
         request, 'pages/index.html', {'books': books})

@@ -518,18 +518,29 @@ Click the help icon above to learn more.
 			<nav class="navigation archive-navigation" role="navigation" aria-label="Posts navigation">
 				<h2 class="screen-reader-text">Posts navigation</h2>
 				<div class="nav-links">
-					<span aria-current="page" class="page-numbers current"><span class="screen-reader-text">Page </span>1</span>
-					<a class="page-numbers" href="/2/">
-						<span class="screen-reader-text">Page </span>2
+					{% if books.has_previous %}
+            			<a class="previous page-numbers" href="?page={{ books.previous_page_number }}">Previous</a>
+					{% endif %}
+					{% if books.has_previous %}
+					<a class="page-numbers" href="?page=1">
+						<span class="screen-reader-text">Page </span>1
 					</a>
-					<a class="page-numbers" href="/3/">
-						<span class="screen-reader-text">Page </span>3
-					</a>
+					{% endif %}
+					<span aria-current="page" class="page-numbers current">
+						<span class="screen-reader-text">
+							Page
+						</span>
+						{{ books.number }}
+					</span>
+					{% if books.has_next %}
 					<span class="page-numbers dots">&hellip;</span>
-					<a class="page-numbers" href="/5/">
-						<span class="screen-reader-text">Page </span>5
+					<a class="page-numbers" href="?page={{ books.paginator.num_pages }}">
+						<span class="screen-reader-text">Page </span>{{ books.paginator.num_pages }}
 					</a>
-					<a class="next page-numbers" href="/2/">Next</a>
+					{% endif %}
+					{% if books.has_next %}
+            			<a class="next page-numbers" href="?page={{ books.next_page_number }}">Next</a>
+        			{% endif %}
 				</div>
 			</nav>
 		</div><!-- #primary -->
