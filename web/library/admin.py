@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category, PublishingCompany, Author, Book, BookAuthor, BookCategories, Review, Person, Comment
+from .models import (Category, PublishingCompany, Author, Book, BookAuthor, BookCategories,
+    Review, Person, Comment, Lending)
 
 
 @admin.register(Author)
@@ -44,4 +45,9 @@ class PersonAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Lending)
+class LendingAdmin(admin.ModelAdmin):
     pass

@@ -443,7 +443,7 @@ Click the help icon above to learn more.
 											<img
                                                     width="1277"
                                                     height="407"
-                                                    src="https://i.pinimg.com/originals/6c/60/21/6c6021eb9cb94b1fa9065326e9a2471b.png"
+                                                    src="http://localhost:5000/img/logo-dark.png"
                                                     class="custom-logo"
                                                     alt="Library"/>
 										</a>
@@ -466,10 +466,10 @@ Click the help icon above to learn more.
 												<a href="/" aria-current="page">Início</a>
 											</li>
 											<li id="menu-item-806" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-806">
-												<a href="/my-books">Categorias</a>
+												<a href="javscript:void(0);">Categorias</a>
 											</li>
 											<li id="menu-item-805" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-805">
-												<a href="javscript:void(0);">Meus Livros</a>
+												<a href="/my-books">Meus Livros</a>
 											</li>
 											<li id="menu-item-807" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-807">
 												<a href="javscript:void(0);">Sobre</a>
@@ -519,7 +519,7 @@ Click the help icon above to learn more.
 				<h2 class="screen-reader-text">Posts navigation</h2>
 				<div class="nav-links">
 					{% if books.has_previous %}
-            			<a class="previous page-numbers" href="?page={{ books.previous_page_number }}">Previous</a>
+            			<a class="nav-previous page-numbers" href="?page={{ books.previous_page_number }}">Previous</a>
 					{% endif %}
 					{% if books.has_previous %}
 					<a class="page-numbers" href="?page=1">

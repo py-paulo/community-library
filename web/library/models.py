@@ -65,16 +65,17 @@ class Book(models.Model):
     display_cover = models.BooleanField(verbose_name='Exibir foto', default=False, null=True, blank=True)
     created_at = models.DateTimeField(default=datetime.now, verbose_name="Cadastrado em", blank=True, null=True)
     owner = models.ForeignKey(Person, null=True, blank=False, on_delete=models.CASCADE)
+    rented = models.BooleanField(verbose_name="Alugado", default=False, null=True, blank=True)
 
     cover = models.ImageField(verbose_name='Capa', null=True, blank=True)
 
     def __str__(self):
-        return self.title.title()
+        return self.title.title() if not self.subtitle else '%s: %s' % (self.title.title(), self.subtitle.lower())
 
     @property
     def display_title(self) -> str:
         title = self.title.title()
-        title = title + ' ' + self.subtitle.capitalize() if self.subtitle else title
+        title = title + ': ' + self.subtitle.capitalize() if self.subtitle else title
         return title
 
     @property
@@ -128,7 +129,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
     def __str__(self):
-        return self.title.title()
+        return '%s por %s' % (self.title.title(), self.author.nickname)
 
 
 class Comment(models.Model):
