@@ -67,7 +67,6 @@ def view_books_by_category(request, category):
     book_category_list = BookCategories.objects.filter(category__name=category)[::-1]
 
     book_list = [book_category.book for book_category in book_category_list]
-    print(book_list)
     paginator = Paginator(book_list, 10)
 
     try:
@@ -86,7 +85,19 @@ def view_books_by_category(request, category):
 
 @login_required()
 def view_my_books(request):
-    books = Book.objects.filter(owner=Person.objects.get(user=request.user))
+    book_list = Book.objects.filter(owner=Person.objects.get(user=request.user))
+
+    paginator = Paginator(book_list, 10)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        books = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        books = paginator.page(paginator.num_pages)
 
     return render(
         request, 'pages/index.html', {'books': books})
@@ -119,4 +130,5 @@ def view_post(request, book_id=None):
 
     return render(
         request, 'pages/%s' % html, {
-            'book': book, 'books': books, 'categories': categories, 'comments': comments, 'reviews': reviews})
+            'book': book, 'books': books, 'categories': categories, 'comments': comments, 'reviews': reviews
+        })
